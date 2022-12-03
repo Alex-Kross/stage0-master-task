@@ -11,24 +11,25 @@ public class Pyramid {
             int left = i - 1;
             int numberLeft = i;
             int numberRight = 2;
-
+            String str = "";
             for (int j = 1; j < width + 1; j++) {
                 int right = j - middle;
 
                 if (j < middle && middle - left == j) {
-                    System.out.print(numberLeft);
+                    str += numberLeft;
                     left--;
                     numberLeft--;
                 } else if (j == middle) {
-                    System.out.print(1);
+                    str += 1;
                 } else if (j > middle && i > right) {
-                    System.out.print(numberRight);
+                    str += numberRight;
                     numberRight++;
                 } else {
-                    System.out.print(" ");
+                    str += " ";
                 }
             }
-            System.out.println();
+            str = str.substring(0, str.length()/2) + str.substring(str.length()/2).trim();
+            System.out.println(str);
         }
     }
 
